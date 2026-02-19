@@ -1,0 +1,22 @@
+# Python 虚拟环境（这是导致你卡顿的主因）
+.venv/
+env/
+venv/
+ENV/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 数据文件（如果你不想把原始数据集传到 GitHub）
+*.csv
+*.xlsx
+*.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 各种日志
+*.log

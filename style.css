@@ -111,42 +111,138 @@ h2 {
   text-align: left;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section 融合版 --- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 0.9fr; /* 兼顾文字排版与图片展示 */
+  gap: 5rem;
   align-items: center;
+  max-width: var(--max-content-width);
+  margin: 5rem auto;
+  padding: 0 2rem;
 }
 
 .hero h1 {
   font-family: "Georgia", serif;
-  font-size: 3.2rem;
-  margin: 1rem 0;
+  font-size: 3.5rem; /* 增强视觉冲击力 */
+  margin: 1.2rem 0;
   line-height: 1.1;
+  color: var(--text-main);
 }
 
-.hero em { color: var(--accent); font-style: italic; }
-
-.tag {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  font-weight: bold;
+.hero em { 
+  color: var(--accent); /* 你的主题粉色 #b76e79 */
+  font-style: italic; 
 }
 
-.hero-visual .placeholder {
-  background-color: #e7d6d8;
-  border-radius: 24px;
-  height: 350px;
+.hero p {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* --- 按钮样式 (融合 Marketing 转化逻辑与交互感) --- */
+.hero-actions {
   display: flex;
+  gap: 1.5rem;
   align-items: center;
-  justify-content: center;
-  color: #6b4c50;
-  border: 1px solid var(--soft-border);
 }
 
+/* 主按钮：View Case Studies */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: #a55d67; /* 悬停时稍微加深粉色 */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(183, 110, 121, 0.25);
+}
+
+/* 次按钮：Professional Experience */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 2px solid var(--soft-border);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  padding-left: 8px; /* 轻微右移感，引导点击 */
+}
+
+/* --- 照片样式 (融合专业感与氛围感) --- */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  aspect-ratio: 4 / 5; /* 保持专业人像比例 */
+  object-fit: cover;
+  border-radius: 40px; /* 大圆角呼应作品集整体风格 */
+  border: 1px solid var(--soft-border);
+  /* 融合了黑色深度的同时，加入了一点点淡粉色的环境光阴影 */
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.08), 
+    0 15px 30px rgba(183, 110, 121, 0.05); 
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hero-photo:hover {
+  transform: scale(1.02) rotate(0.5deg); /* 微小的旋转增加动感 */
+}
+
+/* --- 响应式适配：移动端体验优化 --- */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 3rem auto;
+    gap: 3rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem; /* 移动端字号缩小 */
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .hero p { 
+    margin: 0 auto 2.5rem auto; 
+  }
+  
+  .hero-photo {
+    max-width: 320px; /* 移动端缩小照片 */
+  }
+}
 /* --- Experience 板块修正 --- */
 .experience-list {
   width: 100%;
@@ -273,20 +369,68 @@ h2 {
   border-bottom-color: var(--accent);
 }
 
-/* --- Skills & About --- */
-.skills-subtitle {
-  font-size: 1.2rem;
-  font-weight: 600;
+/* --- Skills Section (标签气泡风格) --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.skill-category h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
   color: var(--accent);
-  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  letter-spacing: 0.05em;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tags span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border: 1px solid var(--soft-border);
+  border-radius: 50px;
+  color: #555;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.skill-tags span:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(183, 110, 126, 0.15);
+}
+
+/* --- About Section (简历与个人描述) --- */
+.about-description {
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
 }
 
 .resume-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
 
+/* 按钮基础样式 */
 .btn-preview, .btn-resume {
   display: inline-flex;
   align-items: center;
@@ -295,15 +439,17 @@ h2 {
   border-radius: 14px;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
+/* 预览按钮：轻盈白底 */
 .btn-preview {
   background: white;
   border: 1px solid var(--soft-border);
   color: var(--text-main);
 }
 
+/* 下载按钮：主题色底 */
 .btn-resume {
   background: var(--accent);
   color: white;
@@ -312,9 +458,13 @@ h2 {
 
 .btn-preview:hover, .btn-resume:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(183, 110, 121, 0.2);
+  box-shadow: 0 10px 20px rgba(183, 110, 121, 0.2);
 }
 
+.btn-preview:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 /* --- Footer --- */
 .site-footer {
   text-align: center;
