@@ -1,0 +1,80 @@
+/* Homepage-only spacing, hierarchy, and disclosure controls. Shared pages are unchanged. */
+.homepage .shell{padding-top:32px}
+.homepage .header-inner{min-height:74px;gap:20px}
+.homepage .header-inner nav{gap:18px;font-size:.82rem}
+.homepage .hero{padding:36px;gap:36px;grid-template-columns:190px minmax(0,1fr)}
+.homepage .hero h1{font-size:clamp(2.4rem,4.6vw,3.25rem)}
+.homepage .portrait{padding-right:24px}
+.homepage .intro{font-size:1rem;line-height:1.65}
+.homepage .actions{margin-top:18px}
+.homepage .section{margin-top:32px}
+.homepage .section-heading{margin-bottom:18px}
+.homepage .section-heading h2{font-size:1.6rem}
+.homepage .project-category+.project-category{margin-top:28px}
+.homepage .category-heading{font-size:1.22rem;margin-bottom:6px}
+.homepage .category-subtitle{font-size:.95rem;max-width:780px;margin:0 0 18px;color:var(--muted)}
+.homepage .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.homepage .project{min-width:0;padding:22px;display:flex;flex-direction:column;align-items:stretch;gap:18px}
+.homepage .project-copy{display:flex;flex-direction:column;flex:1;min-width:0}
+.homepage .project-copy h3{font-size:1.4rem;margin:0 0 10px;line-height:1.3}
+.homepage .project-copy h3 br{display:initial}
+.homepage .project-copy>.eyebrow{margin-bottom:10px;font-size:.62rem}
+.homepage .project-copy>p{font-size:1rem;line-height:1.6;margin:0 0 12px}
+.homepage .project .tags{margin:0 0 16px;gap:6px}
+.homepage .tags span{font-size:.75rem;padding:4px 8px}
+.homepage .project-links{margin-top:auto;gap:12px 20px;font-size:.9rem}
+.homepage .project-links a{padding:8px 0;position:relative;z-index:1}
+.homepage .indy-project .project-links a:after{display:none}
+.homepage .indy-card-excerpt{padding:8px 0 8px 18px;min-height:182px;border-left:2px solid #d8cdeb;display:flex;flex-direction:column;justify-content:center}
+.homepage .indy-card-excerpt>p{font-size:1.7rem;line-height:1.4;margin:12px 0;letter-spacing:-.025em}
+.homepage .indy-card-excerpt .section-note{font-size:.8rem;display:block}
+.homepage .dashboard-preview{margin:0}
+.homepage .dashboard-preview img{width:100%;height:auto;aspect-ratio:1000/650;object-fit:contain}
+.homepage .dashboard-preview figcaption{font-size:.75rem;margin-top:6px;line-height:1.5}
+.homepage .live-preview{height:auto;aspect-ratio:1000/650}
+.homepage .experience,.homepage .education-section,.homepage .about,.homepage .skills,.homepage .certificates,.homepage .contact{padding:26px}
+.homepage .experience-row{grid-template-columns:165px minmax(0,1fr) 145px;gap:20px;padding:20px 0}
+.homepage .experience-row h4{font-size:1rem;padding-top:5px}
+.homepage .experience-row .experience-location{font-size:.8rem}
+.homepage .experience-row time{font-size:.8rem}
+.homepage .experience-row .experience-summary{font-size:1rem;line-height:1.65;margin:8px 0 0}
+.homepage .experience-disclosure,.homepage .research-disclosure{margin-top:6px}
+.homepage :is(.experience-disclosure,.research-disclosure)>summary{display:list-item;list-style:none;cursor:pointer;color:#75608f;font-size:.9rem;font-weight:600;min-height:44px;padding:10px 0;width:fit-content}
+.homepage :is(.experience-disclosure,.research-disclosure)>summary::-webkit-details-marker{display:none}
+.homepage :is(.experience-disclosure,.research-disclosure)>summary::marker{content:''}
+.homepage details:not([open])>summary .when-open,.homepage details[open]>summary .when-closed{display:none}
+.homepage summary:focus-visible{outline:3px solid #a18acb;outline-offset:3px}
+.homepage .experience-details{margin:8px 0 0;padding-left:20px}
+.homepage .experience-details li{font-size:1rem;line-height:1.65;padding-bottom:12px}
+.homepage .education-section>h2{font-size:1.6rem;margin-bottom:20px}
+.homepage .academic-subheading{font-size:1.1rem;margin:0 0 14px}
+.homepage .education-grid{gap:26px;margin:0}
+.homepage .education-grid p{font-size:1rem;line-height:1.6}
+.homepage .education-grid article>span:not(.education-dot){font-size:.85rem}
+.homepage .research-section{padding:24px 0 0;margin-top:24px;border-top:1px solid var(--line)}
+.homepage .research-section>h2{font-size:1.1rem;margin:5px 0 14px}
+.homepage .research-feature{grid-template-columns:minmax(0,1fr) 185px;gap:24px;align-items:start}
+.homepage .research-feature h3{font-size:1.2rem;line-height:1.4}
+.homepage .research-feature p{font-size:1rem;line-height:1.65}
+.homepage .research-feature .research-byline{font-size:.85rem!important}
+.homepage .research-link{white-space:normal;font-size:.9rem;padding:8px 0}
+.homepage .research-disclosure .tags{margin:14px 0 0}
+.homepage .bottom-grid{gap:20px;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.homepage .skills-grid{gap:20px 24px}
+.homepage .skills-grid h3{font-size:1rem}
+.homepage .skills-grid p{font-size:1rem;line-height:1.65}
+.homepage .certificate-image-link{max-width:235px;margin:14px 0}
+.homepage .certificates p{font-size:.95rem;line-height:1.65}
+.homepage .certificates .certificate-validity{font-size:.85rem}
+.homepage .about>div:first-child p{font-size:1rem;line-height:1.65}
+.homepage .about h2{font-size:1.55rem}
+.homepage .contact{margin-top:32px;gap:24px}
+.homepage .contact p{font-size:1rem}
+.homepage .contact-links{font-size:.95rem}
+.homepage :is(#education,#research,#skills,#certificates,#about,#experience,#projects){scroll-margin-top:110px}
+@media(max-width:1000px){.homepage .header-inner{flex-wrap:wrap}.homepage .header-inner nav{order:3;width:100%;justify-content:center;gap:22px;flex-wrap:wrap}.homepage .header-inner>.compact{margin-left:auto}.homepage .experience-row{grid-template-columns:145px minmax(0,1fr)}.homepage .experience-row>time{grid-column:2;text-align:left;padding:0}.homepage .indy-card-excerpt{min-height:195px}.homepage .research-feature{grid-template-columns:1fr;gap:10px}}
+@media(max-width:760px){.homepage .project-grid{grid-template-columns:1fr}.homepage .project{gap:18px}.homepage .indy-card-excerpt{min-height:0;padding:12px 18px}.homepage .hero{grid-template-columns:130px minmax(0,1fr);padding:28px;gap:24px}.homepage .portrait{padding-right:16px}.homepage .portrait img{height:170px}.homepage .bottom-grid{grid-template-columns:1fr}.homepage .certificate-image-link{max-width:260px}.homepage .skills-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.homepage .shell{padding:20px 17px 15px}.homepage .header-inner{gap:12px}.homepage .header-inner nav{gap:4px 16px;font-size:.8rem}.homepage .header-inner nav a{padding:6px 0}.homepage .hero{padding:24px;grid-template-columns:1fr;gap:18px}.homepage .portrait{padding:0}.homepage .portrait img{height:100px;width:90px}.homepage .hero h1{font-size:2.3rem}.homepage .section{margin-top:22px}.homepage .project{padding:20px}.homepage .project-copy h3{font-size:1.35rem}.homepage .indy-card-excerpt>p{font-size:1.55rem}.homepage .project-category+.project-category{margin-top:24px}.homepage .experience,.homepage .education-section,.homepage .about,.homepage .skills,.homepage .certificates,.homepage .contact{padding:22px}.homepage .experience-row{grid-template-columns:1fr;gap:6px;padding:18px 0}.homepage .experience-row>time{grid-column:1;grid-row:2;text-align:left;margin-left:44px}.homepage .experience-row .experience-location{margin-top:3px}.homepage .experience-row>div:nth-child(2){grid-row:3}.homepage .experience-row .experience-summary{margin-top:6px}.homepage .education-grid,.homepage .skills-grid{grid-template-columns:1fr;gap:20px}.homepage .research-section{padding-top:20px;margin-top:20px}.homepage .category-subtitle{font-size:.95rem}.homepage .contact{margin-top:22px}.homepage .contact-links{flex-wrap:wrap;gap:18px}.homepage :is(#education,#research,#skills,#certificates,#about,#experience,#projects){scroll-margin-top:155px}}
+@media(prefers-reduced-motion:reduce){.homepage *{scroll-behavior:auto;transition:none!important}}
+
+.homepage .research-links{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
